@@ -5,6 +5,9 @@ import com.github.Glatinis.godTrident.listeners.AirRiptideListener;
 import com.github.Glatinis.godTrident.listeners.CritLightningListener;
 import com.github.Glatinis.godTrident.listeners.FallDamageListener;
 import com.github.Glatinis.godTrident.listeners.SmashListener;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,6 +27,14 @@ public final class GodTrident extends JavaPlugin {
 
         double smashDamage = getConfig().getDouble("smash-damage", 20.0);
         Set<UUID> spinAttacking = new HashSet<>();
+
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "god_trident"), GodTridentItem.create());
+        recipe.shape("DDD", "RTR", "RHR");
+        recipe.setIngredient('D', Material.DIAMOND);
+        recipe.setIngredient('R', Material.REDSTONE_BLOCK);
+        recipe.setIngredient('T', Material.TRIDENT);
+        recipe.setIngredient('H', Material.HEART_OF_THE_SEA);
+        getServer().addRecipe(recipe);
 
         getCommand("givegodtrident").setExecutor(new GiveGodTridentCommand());
 
