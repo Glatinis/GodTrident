@@ -12,27 +12,27 @@ public final class GiveGodTridentCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.isOp()) {
-            sender.sendMessage("You do not have permission to use this command.");
+            sender.sendRichMessage("<red>You do not have permission to use this command.</red>");
             return true;
         }
 
         Player target;
         if (args.length == 0) {
             if (!(sender instanceof Player player)) {
-                sender.sendMessage("Usage: /givegodtrident <player>");
+                sender.sendRichMessage("<yellow>Usage: /givegodtrident <player></yellow>");
                 return true;
             }
             target = player;
         } else {
             target = Bukkit.getPlayerExact(args[0]);
             if (target == null) {
-                sender.sendMessage("Player '" + args[0] + "' not found or is not online.");
+                sender.sendRichMessage("<red>Player '<white>" + args[0] + "</white>' not found or is not online.</red>");
                 return true;
             }
         }
 
         target.getInventory().addItem(GodTridentItem.create());
-        sender.sendMessage("Gave God Trident to " + target.getName() + ".");
+        sender.sendRichMessage("<green>Gave God Trident to <white>" + target.getName() + "</white>.</green>");
         return true;
     }
 }
