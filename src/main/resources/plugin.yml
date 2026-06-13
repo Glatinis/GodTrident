@@ -7,3 +7,8 @@ api-version: '1.21.11'
 load: POSTWORLD
 
 authors: [ Glatinis ]
+
+commands:
+  givegodtrident:
+    description: Gives the God Trident to a player.
+    usage: /givegodtrident [player]
