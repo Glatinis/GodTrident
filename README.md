@@ -45,23 +45,7 @@ resource-pack-sha1=4c6d87690ad5d00d8ea7714915ace4fd6d983994
 
 ## Crafting Recipe
 
-<table align="center">
-  <tr>
-    <td align="center">💎<br><sub>Diamond</sub></td>
-    <td align="center">💎<br><sub>Diamond</sub></td>
-    <td align="center">💎<br><sub>Diamond</sub></td>
-  </tr>
-  <tr>
-    <td align="center">🟥<br><sub>Redstone Block</sub></td>
-    <td align="center">🔱<br><sub>Trident</sub></td>
-    <td align="center">🟥<br><sub>Redstone Block</sub></td>
-  </tr>
-  <tr>
-    <td align="center">🟥<br><sub>Redstone Block</sub></td>
-    <td align="center">💙<br><sub>Heart of the Sea</sub></td>
-    <td align="center">🟥<br><sub>Redstone Block</sub></td>
-  </tr>
-</table>
+<img width="956" height="451" alt="god trident recipe" src="https://github.com/user-attachments/assets/df0e06c6-8ee4-4e39-b2cd-838ad875c2d4" />
 
 ## Commands
 
