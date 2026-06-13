@@ -2,6 +2,7 @@ package com.github.Glatinis.godTrident;
 
 import com.github.Glatinis.godTrident.commands.GiveGodTridentCommand;
 import com.github.Glatinis.godTrident.listeners.AirRiptideListener;
+import com.github.Glatinis.godTrident.listeners.CritLightningListener;
 import com.github.Glatinis.godTrident.listeners.SmashListener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,6 +29,7 @@ public final class GodTrident extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new AirRiptideListener(cooldownManager, this, spinAttacking, smashDamage), this);
         pm.registerEvents(new SmashListener(spinAttacking), this);
+        pm.registerEvents(new CritLightningListener(cooldownManager), this);
         // Register ability listeners here as they are added:
         // pm.registerEvents(new YourAbilityListener(cooldownManager), this);
     }
