@@ -18,6 +18,10 @@ java {
 }
 
 tasks {
+    jar {
+        destinationDirectory = file("""C:\Users\rayan\Desktop\paper testing servs\1.21.11 (2)\plugins""")
+    }
+
     runServer {
         // Configure the Minecraft version for our task.
         // This is the only required configuration besides applying the plugin.

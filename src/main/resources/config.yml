@@ -1,0 +1,5 @@
+# Damage dealt when slamming into a living entity during riptide (in HP; 2 HP = 1 heart)
+smash-damage: 20.0
+
+# Base melee attack damage of the God Trident when held in the main hand
+trident-base-damage: 10.0

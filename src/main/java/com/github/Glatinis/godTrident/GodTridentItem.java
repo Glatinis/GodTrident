@@ -4,7 +4,10 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
@@ -14,12 +17,16 @@ import java.util.List;
 public final class GodTridentItem {
 
     public static final int CUSTOM_MODEL_DATA = 10000;
+    private static GodTrident plugin;
     private static NamespacedKey key;
+    private static double baseDamage;
 
     private GodTridentItem() {}
 
-    public static void init(GodTrident plugin) {
-        key = new NamespacedKey(plugin, "god_trident");
+    public static void init(GodTrident p) {
+        plugin = p;
+        key = new NamespacedKey(p, "god_trident");
+        baseDamage = p.getConfig().getDouble("trident-base-damage", 10.0);
     }
 
     public static ItemStack create() {
@@ -32,6 +39,16 @@ public final class GodTridentItem {
         meta.setCustomModelData(CUSTOM_MODEL_DATA);
         meta.getPersistentDataContainer().set(key, PersistentDataType.BYTE, (byte) 1);
         meta.addEnchant(Enchantment.RIPTIDE, 3, true);
+        meta.removeAttributeModifier(Attribute.ATTACK_DAMAGE);
+        meta.addAttributeModifier(
+            Attribute.ATTACK_DAMAGE,
+            new AttributeModifier(
+                new NamespacedKey(plugin, "attack_damage"),
+                baseDamage,
+                AttributeModifier.Operation.ADD_NUMBER,
+                EquipmentSlotGroup.MAINHAND
+            )
+        );
         item.setItemMeta(meta);
         return item;
     }
