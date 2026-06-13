@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
@@ -30,6 +31,7 @@ public final class GodTridentItem {
         ));
         meta.setCustomModelData(CUSTOM_MODEL_DATA);
         meta.getPersistentDataContainer().set(key, PersistentDataType.BYTE, (byte) 1);
+        meta.addEnchant(Enchantment.RIPTIDE, 3, true);
         item.setItemMeta(meta);
         return item;
     }
