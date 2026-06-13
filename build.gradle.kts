@@ -22,10 +22,11 @@ tasks {
         destinationDirectory = file("""C:\Users\rayan\Desktop\paper testing servs\1.21.11 (2)\plugins""")
     }
 
+    compileJava {
+        options.release = 21
+    }
+
     runServer {
-        // Configure the Minecraft version for our task.
-        // This is the only required configuration besides applying the plugin.
-        // Your plugin's jar (or shadowJar if present) will be used automatically.
         minecraftVersion("1.21.11")
         jvmArgs("-Xms2G", "-Xmx2G")
     }

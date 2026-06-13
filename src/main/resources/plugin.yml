@@ -12,3 +12,8 @@ commands:
   givegodtrident:
     description: Gives the God Trident to a player.
     usage: /givegodtrident [player]
+
+permissions:
+  godtrident.give:
+    description: Allows using /givegodtrident
+    default: op

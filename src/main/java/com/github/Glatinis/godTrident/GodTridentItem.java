@@ -23,10 +23,10 @@ public final class GodTridentItem {
 
     private GodTridentItem() {}
 
-    public static void init(GodTrident p) {
+    public static void init(GodTrident p, PluginConfig config) {
         plugin = p;
         key = new NamespacedKey(p, "god_trident");
-        baseDamage = p.getConfig().getDouble("trident-base-damage", 10.0);
+        baseDamage = config.getBaseDamage();
     }
 
     public static ItemStack create() {
